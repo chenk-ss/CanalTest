@@ -1,4 +1,4 @@
-package com.chenk.kafkcanaltest.config;
+package com.chenk.canaltest.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * @since: 2021/7/16
  */
 @Configuration
-@MapperScan("com.chenk.kafkCanalTest.mapper")
+@MapperScan("com.chenk.canaltest.mapper")
 public class MybatisPlusConfig {
 
     @Bean

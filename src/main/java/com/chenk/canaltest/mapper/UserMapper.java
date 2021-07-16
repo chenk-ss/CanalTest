@@ -1,7 +1,7 @@
-package com.chenk.kafkcanaltest.mapper;
+package com.chenk.canaltest.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.chenk.kafkcanaltest.dto.entity.Order;
+import com.chenk.canaltest.dto.entity.User;
 import org.springframework.stereotype.Repository;
 
 /**
@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
  * @since: 2021/7/16
  */
 @Repository
-public interface OrderMapper extends BaseMapper<Order> {
+public interface UserMapper extends BaseMapper<User> {
 }

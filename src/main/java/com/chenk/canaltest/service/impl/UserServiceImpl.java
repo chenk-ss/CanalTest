@@ -1,9 +1,9 @@
-package com.chenk.kafkcanaltest.service.impl;
+package com.chenk.canaltest.service.impl;
 
-import com.chenk.kafkcanaltest.dto.entity.User;
-import com.chenk.kafkcanaltest.mapper.UserMapper;
-import com.chenk.kafkcanaltest.service.MysqlCommandService;
-import com.chenk.kafkcanaltest.service.UserService;
+import com.chenk.canaltest.dto.entity.User;
+import com.chenk.canaltest.mapper.UserMapper;
+import com.chenk.canaltest.service.MysqlCommandService;
+import com.chenk.canaltest.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

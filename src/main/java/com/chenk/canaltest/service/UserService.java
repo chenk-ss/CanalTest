@@ -1,4 +1,4 @@
-package com.chenk.kafkcanaltest.service;
+package com.chenk.canaltest.service;
 
 /**
  * @author: chenke

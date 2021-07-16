@@ -1,4 +1,4 @@
-package com.chenk.kafkcanaltest.dto.entity;
+package com.chenk.canaltest.dto.entity;
 
 import lombok.Data;
 

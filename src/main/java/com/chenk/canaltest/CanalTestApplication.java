@@ -1,13 +1,13 @@
-package com.chenk.kafkcanaltest;
+package com.chenk.canaltest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class KafkCanalTestApplication {
+public class CanalTestApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(KafkCanalTestApplication.class, args);
+        SpringApplication.run(CanalTestApplication.class, args);
     }
 
 }

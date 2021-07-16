@@ -1,10 +1,10 @@
-package com.chenk.kafkcanaltest;
+package com.chenk.canaltest;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class KafkCanalTestApplicationTests {
+class CanalTestApplicationTests {
 
     @Test
     void contextLoads() {

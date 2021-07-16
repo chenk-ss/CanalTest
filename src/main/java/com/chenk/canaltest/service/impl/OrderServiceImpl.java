@@ -1,9 +1,9 @@
-package com.chenk.kafkcanaltest.service.impl;
+package com.chenk.canaltest.service.impl;
 
-import com.chenk.kafkcanaltest.dto.entity.Order;
-import com.chenk.kafkcanaltest.mapper.OrderMapper;
-import com.chenk.kafkcanaltest.service.MysqlCommandService;
-import com.chenk.kafkcanaltest.service.OrderService;
+import com.chenk.canaltest.dto.entity.Order;
+import com.chenk.canaltest.mapper.OrderMapper;
+import com.chenk.canaltest.service.MysqlCommandService;
+import com.chenk.canaltest.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

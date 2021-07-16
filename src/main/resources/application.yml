@@ -1,0 +1,59 @@
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      auto:
+        commit:
+          interval:
+            ms: 1000
+      auto-offset-reset: latest
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      properties:
+        group:
+          id: defaultConsumerGroup
+        request:
+          timeout:
+            ms: 180000
+        session:
+          timeout:
+            ms: 120000
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    listener:
+      missing-topics-fatal: false
+    producer:
+      acks: 1
+      batch-size: 16384
+      buffer-memory: 33554432
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      properties:
+        linger:
+          ms: 0
+      retries: 0
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+  datasource:
+    driverClassName: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3401/bak_news?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+  jpa:
+    database: mysql
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: false
+
+mybatis-plus:
+  configuration:
+    auto-mapping-behavior: full
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+  mapper-locations: classpath*:mapper/*Mapper.xml

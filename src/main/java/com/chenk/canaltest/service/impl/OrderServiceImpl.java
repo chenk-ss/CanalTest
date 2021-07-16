@@ -29,6 +29,6 @@ public class OrderServiceImpl implements OrderService, MysqlCommandService {
 
     @Override
     public Object delete(Object param) {
-        return orderMapper.deleteById((Integer) param);
+        return orderMapper.deleteById(((Order) param).getId());
     }
 }

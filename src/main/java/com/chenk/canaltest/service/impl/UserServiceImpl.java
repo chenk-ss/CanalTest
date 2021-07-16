@@ -29,6 +29,6 @@ public class UserServiceImpl implements UserService, MysqlCommandService {
 
     @Override
     public Object delete(Object param) {
-        return userMapper.deleteById((Integer) param);
+        return userMapper.deleteById(((User) param).getId());
     }
 }

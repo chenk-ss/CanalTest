@@ -43,11 +43,10 @@ public class KafkaConsumer {
                 clazz = Order.class;
                 service = orderService;
                 break;
-            case "user": {
+            case "user":
                 clazz = User.class;
                 service = userService;
                 break;
-            }
             default:
                 return;
         }
@@ -65,13 +64,13 @@ public class KafkaConsumer {
     void sync(String type, Class clazz, MysqlCommandService service, String data) {
         switch (type) {
             case "INSERT":
-                JSON.parseArray(data, clazz).stream().forEach(object->service.insert(object));
+                JSON.parseArray(data, clazz).stream().forEach(object -> service.insert(object));
                 break;
             case "UPDATE":
-                JSON.parseArray(data, clazz).stream().forEach(object->service.update(object));
+                JSON.parseArray(data, clazz).stream().forEach(object -> service.update(object));
                 break;
             case "DELETE":
-                JSON.parseArray(data, clazz).stream().forEach(object->service.delete(object));
+                JSON.parseArray(data, clazz).stream().forEach(object -> service.delete(object));
                 break;
             default:
                 break;

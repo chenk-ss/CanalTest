@@ -19,6 +19,7 @@ spring:
           timeout:
             ms: 120000
       value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      client-id: local
     listener:
       missing-topics-fatal: false
     producer:

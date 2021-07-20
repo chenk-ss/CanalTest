@@ -13,6 +13,6 @@ import java.util.Date;
 @TableName("`order`")
 public class Order {
     private Integer id;
-    private String order_name;
-    private Date create_time;
+    private String orderName;
+    private Date createTime;
 }

@@ -18,17 +18,17 @@ public class UserServiceImpl implements UserService, MysqlCommandService {
     private UserMapper userMapper;
 
     @Override
-    public Object insert(Object param) {
+    public Object syncInsert(Object param) {
         return userMapper.insert((User) param);
     }
 
     @Override
-    public Object update(Object param) {
+    public Object syncUpdate(Object param) {
         return userMapper.updateById((User) param);
     }
 
     @Override
-    public Object delete(Object param) {
+    public Object syncDelete(Object param) {
         return userMapper.deleteById(((User) param).getId());
     }
 }

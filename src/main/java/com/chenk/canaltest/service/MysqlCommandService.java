@@ -1,9 +1,9 @@
 package com.chenk.canaltest.service;
 
 public interface MysqlCommandService {
-    Object insert(Object param);
+    Object syncInsert(Object param);
 
-    Object update(Object param);
+    Object syncUpdate(Object param);
 
-    Object delete(Object param);
+    Object syncDelete(Object param);
 }

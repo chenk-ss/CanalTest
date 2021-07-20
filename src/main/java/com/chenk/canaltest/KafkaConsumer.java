@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.chenk.canaltest.dto.CanalMessageDTO;
 import com.chenk.canaltest.dto.entity.Order;
 import com.chenk.canaltest.dto.entity.User;
+import com.chenk.canaltest.util.JsonUtil;
 import com.chenk.canaltest.service.MysqlCommandService;
 import com.chenk.canaltest.service.OrderService;
 import com.chenk.canaltest.service.UserService;
@@ -31,6 +32,7 @@ public class KafkaConsumer {
     @KafkaListener(topics = {"canalTopic"})
     public void KafkaListener(ConsumerRecord<?, ?> record) {
         String value = (String) record.value();
+        value = JsonUtil.convertJSONKeyReturnString(value);
         CanalMessageDTO canalMessageDTO = JSONObject.parseObject(value, CanalMessageDTO.class);
         if (canalMessageDTO.getIsDdl()) {
             log.info("DDL:{}", canalMessageDTO.getSql());
@@ -61,20 +63,24 @@ public class KafkaConsumer {
      * @param service
      * @param data
      */
-    void sync(String type, Class clazz, MysqlCommandService service, String data) {
+    private void sync(String type, Class clazz, MysqlCommandService service, String data) {
+        log.info("-----{}开始{}-----", clazz.getName(), type);
         switch (type) {
             case "INSERT":
-                JSON.parseArray(data, clazz).stream().forEach(object -> service.insert(object));
+                JSON.parseArray(data, clazz).stream().forEach(object -> service.syncInsert(object));
                 break;
             case "UPDATE":
-                JSON.parseArray(data, clazz).stream().forEach(object -> service.update(object));
+                JSON.parseArray(data, clazz).stream().forEach(object -> service.syncUpdate(object));
                 break;
             case "DELETE":
-                JSON.parseArray(data, clazz).stream().forEach(object -> service.delete(object));
+                JSON.parseArray(data, clazz).stream().forEach(object -> service.syncDelete(object));
                 break;
             default:
                 break;
         }
+        log.info("-----{}结束{}-----", clazz.getName(), type);
     }
+
+
 
 }

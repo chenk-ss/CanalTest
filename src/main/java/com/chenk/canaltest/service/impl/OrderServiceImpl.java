@@ -18,17 +18,17 @@ public class OrderServiceImpl implements OrderService, MysqlCommandService {
     private OrderMapper orderMapper;
 
     @Override
-    public Object insert(Object param) {
+    public Object syncInsert(Object param) {
         return orderMapper.insert((Order) param);
     }
 
     @Override
-    public Object update(Object param) {
+    public Object syncUpdate(Object param) {
         return orderMapper.updateById((Order) param);
     }
 
     @Override
-    public Object delete(Object param) {
+    public Object syncDelete(Object param) {
         return orderMapper.deleteById(((Order) param).getId());
     }
 }
